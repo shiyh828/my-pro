@@ -1,0 +1,325 @@
+<div class="grid">
+    <ul style="grid-row: 1;">
+        <!-- 应聘岗位 -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>应聘岗位
+            </div>
+            <mat-form-field appearance="standard" class="info-item-content-input">
+                <input matInput placeholder="请输入" style="padding:0px 0px 12px 10px;" required>
+            </mat-form-field>
+        </li>
+
+        <!-- 填表日期 -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>填表日期
+            </div>
+            <List [className]="'date-picker-list'" class="info-item-content-input"
+                style="border:1px solid rgb(201, 196, 196);border-radius: 10px;">
+                <ListItem DatePicker [arrow]="'horizontal'" [mode]="'date'" [(ngModel)]="value" (onOk)="onOk($event)">
+                    <Brief style="text-align: center;">{{name}}
+                        <span *ngIf="selected">
+                            <i class="fa fa-angle-down" style="font-size: 20px;"></i>
+                        </span>
+                    </Brief>
+                </ListItem>
+            </List>
+        </li>
+
+        <!-- 姓名 -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>姓名
+            </div>
+            <mat-form-field appearance="standard" class="info-item-content-input">
+                <input matInput placeholder="请输入" style="padding:0px 0px 12px 10px;" required>
+            </mat-form-field>
+        </li>
+
+        <!-- 性别 -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>性别
+            </div>
+            <mat-form-field appearance="outline" class="info-item-content-input">
+                <mat-select [(ngModel)]="selectedSex " name="dbSelect"
+                    style="height:34px;padding-top:6px;text-align: center;">
+                    <mat-option *ngFor="let dbSelect of dbSelects" [value]="dbSelect.selectValue">
+                        {{dbSelect.selectValue | booleansexpipe}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </li>
+
+        <!-- 出生日期 -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>出生日期
+            </div>
+            <List [className]="'date-picker-list'" class="info-item-content-input"
+                style="border:1px solid rgb(201, 196, 196);border-radius: 10px;">
+                <ListItem DatePicker [arrow]="'horizontal'" [mode]="'date'" [(ngModel)]="valueBirth"
+                    (onOk)="onOkBirth($event)">
+                    <Brief style="text-align: center;">{{nameBirth}}
+                        <span *ngIf="selectedBirth">
+                            <i class="fa fa-angle-down" style="font-size: 20px;"></i>
+                        </span>
+                    </Brief>
+                </ListItem>
+            </List>
+        </li>
+
+        <!-- 民族 -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>民族
+            </div>
+            <mat-form-field appearance="standard" class="info-item-content-input">
+                <input matInput placeholder="请输入" style="padding:0px 0px 12px 10px;" required>
+            </mat-form-field>
+        </li>
+
+        <!-- 政治面貌 -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>政治面貌
+            </div>
+            <mat-form-field appearance="standard" class="info-item-content-input">
+                <input matInput placeholder="请输入" style="padding:0px 0px 12px 10px;" required>
+            </mat-form-field>
+        </li>
+
+        <!-- 婚否 -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>婚否
+            </div>
+            <mat-form-field appearance="outline" class="info-item-content-input">
+                <mat-select [(ngModel)]="selectMarry " name="dbSelect"
+                    style="height:34px;padding-top:6px;text-align: center;">
+                    <mat-option *ngFor="let dbSelect of dbSelects" [value]="dbSelect.selectValue">
+                        {{dbSelect.selectValue | booleanpipe}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </li>
+
+        <!--健康状况  -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>健康状况
+            </div>
+            <mat-form-field appearance="standard" class="info-item-content-input">
+                <input matInput placeholder="请输入" style="padding:0px 0px 12px 10px;" required>
+            </mat-form-field>
+        </li>
+
+        <!--籍贯  -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>籍贯（省、市）
+            </div>
+            <mat-form-field appearance="standard" class="info-item-content-input">
+                <input matInput placeholder="请输入" style="padding:0px 0px 12px 10px;" required>
+            </mat-form-field>
+        </li>
+
+        <!--联系方式  -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>联系方式
+            </div>
+            <mat-form-field appearance="standard" class="info-item-content-input">
+                <input matInput placeholder="请输入" style="padding:0px 0px 12px 10px;" required>
+            </mat-form-field>
+        </li>
+
+        <!--电子邮件  -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>电子邮件
+            </div>
+            <mat-form-field appearance="standard" class="info-item-content-input">
+                <input matInput placeholder="请输入" style="padding:0px 0px 12px 10px;" required>
+            </mat-form-field>
+        </li>
+
+        <!--学历  -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>学历
+            </div>
+            <mat-form-field appearance="standard" class="info-item-content-input">
+                <input matInput placeholder="请输入" style="padding:0px 0px 12px 10px;" required>
+            </mat-form-field>
+        </li>
+
+        <!--现住地  -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>现住地
+            </div>
+            <mat-form-field appearance="standard" class="info-item-content-input">
+                <input matInput placeholder="请输入" style="padding:0px 0px 12px 10px;" required>
+            </mat-form-field>
+        </li>
+
+        <!--目前是否在职-->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>目前是否在职
+            </div>
+            <mat-form-field appearance="outline" class="info-item-content-input">
+                <mat-select [(ngModel)]="selectMarry " name="dbSelect"
+                    style="height:34px;padding-top:6px;text-align: center;">
+                    <mat-option *ngFor="let dbSelect of dbSelects" [value]="dbSelect.selectValue">
+                        {{dbSelect.selectValue | booleanpipe}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </li>
+
+        <!-- 预计到岗时间 -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>预计到岗时间
+            </div>
+            <List [className]="'date-picker-list'" class="info-item-content-input"
+                style="border:1px solid rgb(201, 196, 196);border-radius: 10px;">
+                <ListItem DatePicker [arrow]="'horizontal'" [mode]="'date'" [(ngModel)]="valueWork"
+                    (onOk)="onOkWork($event)">
+                    <Brief style="text-align: center;">{{nameWork}}
+                        <span *ngIf="selectedWork">
+                            <i class="fa fa-angle-down" style="font-size: 20px;"></i>
+                        </span>
+                    </Brief>
+                </ListItem>
+            </List>
+        </li>
+
+        <!-- 期望薪资 -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>期望薪资
+            </div>
+            <mat-form-field appearance="standard" class="info-item-content-input">
+                <input matInput placeholder="请输入" style="padding:0px 0px 12px 10px;" required>
+            </mat-form-field>
+        </li>
+
+        <!-- 外语水平 -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>外语水平
+            </div>
+            <mat-form-field appearance="standard" class="info-item-content-input">
+                <input matInput placeholder="请输入" style="padding:0px 0px 12px 10px;" required>
+            </mat-form-field>
+        </li>
+
+        <!-- 计算机水平 -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>计算机水平
+            </div>
+            <mat-form-field appearance="standard" class="info-item-content-input">
+                <input matInput placeholder="请输入" style="padding:0px 0px 12px 10px;" required>
+            </mat-form-field>
+        </li>
+        <!-- 教育经历 -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>教育经历(请至少完整填写一行)
+            </div>
+            <div class="info-item-content-input">
+                <nz-table #editRowEduTable nzBordered style="display: inline;" [nzData]="listOfEduData" [nzShowPagination]="false"
+                    nzTableLayout="fixed">
+                    <thead>
+                        <tr>
+                            <th nzWidth="25%">时间</th>
+                            <th nzWidth="25%">毕业院校</th>
+                            <th nzWidth="25%">专业</th>
+                            <th nzWidth="25%">详细情况</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of editRowEduTable.data">
+                            <ng-container>
+                                <td><input type="text" nz-input [(ngModel)]="editEduCache[data.id].data.time" /></td>
+                                <td><input type="text" nz-input [(ngModel)]="editEduCache[data.id].data.graSchool" />
+                                </td>
+                                <td><input type="text" nz-input [(ngModel)]="editEduCache[data.id].data.specialty" />
+                                </td>
+                                <td><input type="text" nz-input [(ngModel)]="editEduCache[data.id].data.detail" /></td>
+                            </ng-container>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </li>
+
+        <!--工作经历 -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>工作经历(请至少完整填写一行，没有则写<span style="color: red;">‘无’</span>)
+            </div>
+            <div class="info-item-content-input">
+                <nz-table #editRowWorkTable nzBordered [nzData]="listOfWorkData" [nzShowPagination]="false"
+                    nzTableLayout="fixed">
+                    <thead>
+                        <tr>
+                            <th nzWidth="25%">时间</th>
+                            <th nzWidth="25%">公司名称</th>
+                            <th nzWidth="25%">职务</th>
+                            <th nzWidth="25%">职责</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of editRowWorkTable.data">
+                            <ng-container>
+                                <td><input type="text" nz-input [(ngModel)]="editWorkCache[data.id].data.comTime" />
+                                </td>
+                                <td><input type="text" nz-input [(ngModel)]="editWorkCache[data.id].data.comName" />
+                                </td>
+                                <td><input type="text" nz-input [(ngModel)]="editWorkCache[data.id].data.function" />
+                                </td>
+                                <td><input type="text" nz-input [(ngModel)]="editWorkCache[data.id].data.duty" /></td>
+                            </ng-container>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </li>
+
+        <!--个人荣誉 -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">个人荣誉</div>
+            <mat-form-field appearance="standard" class="info-item-content-input">
+                <input matInput placeholder="请输入" style="padding:0px 0px 12px 10px;" required>
+            </mat-form-field>
+        </li>
+
+        <!--兴趣特长 -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">兴趣特长</div>
+            <mat-form-field appearance="standard" class="info-item-content-input">
+                <input matInput placeholder="请输入" style="padding:0px 0px 12px 10px;" required>
+            </mat-form-field>
+        </li>
+
+        <!--自我评价 -->
+        <li>
+            <div class="info-item-name" matTooltipPositon="right">
+                <span style="color: red;">*</span>自我评价
+            </div>
+            <mat-form-field appearance="standard" class="info-item-content-input">
+                <input matInput placeholder="请输入" style="padding:0px 0px 12px 10px;" required>
+            </mat-form-field>
+        </li>
+    </ul>
+
+    <div style="grid-row: 2;">
+        <button mat-flat-button style="width:96%;text-align: center;background-color:#3ca9be;">提交</button>
+    </div>
+</div>

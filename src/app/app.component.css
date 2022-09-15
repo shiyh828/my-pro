@@ -1,0 +1,27 @@
+.banner {
+    width: 100vw;
+    height: 10vh;
+    background-color: #3ca9be;
+    /* 固定盒子 */
+    position: fixed;
+}
+
+.title {
+    color: white;
+    text-align: center;
+}
+
+.content {
+    margin-top: 10vh;
+    padding-left: 2vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 87vh;
+}
+
+.bottom {
+    text-align: center;
+    font-size: 12px;
+    height: 3vh;
+    vertical-align: middle;
+}

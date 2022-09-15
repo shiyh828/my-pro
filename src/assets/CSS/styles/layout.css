@@ -1,0 +1,44 @@
+﻿/* 组件外边框大小 */
+.full{
+  width:100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+  
+/* grid */
+.grid{
+  display: grid;
+  width: 100%;
+  height: 100%;
+}
+
+/* flex */
+.flex {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+/* border1 */
+.flex-border {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 2pt;
+}  
+/* ystack */
+.flex-column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+/* xstack */
+.flex-row {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;   
+}

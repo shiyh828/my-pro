@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.info-item-name {
+  font-weight: 500;
+  padding-top: 10px;
+}
+
+.info-item-content-input {
+  width: 98%;
+}
+
+.date-picker-list .am-list-item .am-list-line .am-list-extra {
+  flex-basis: initial;
+}
+td.ant-table-cell{
+  padding: 0px;
+}
+
+.ant-table-thead>tr>th{
+  padding: 0px;
+}
